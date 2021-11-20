@@ -24,7 +24,7 @@ public class OrderRepository {
             order = dynamoDBMapper.load(Order.class, orderId);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Exception, Returning empty order");
+            System.out.println("Exception, Returning empty order. Order id not found.");
             order = new Order();
         }
         return order;
